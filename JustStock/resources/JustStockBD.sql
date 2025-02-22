@@ -1,12 +1,12 @@
 CREATE DATABASE juststock;
-use juststock;
+USE juststock;
 
 CREATE TABLE usuarios (
 	id_usuario		INT PRIMARY KEY IDENTITY,
 	nome			VARCHAR(100),
 	email			VARCHAR(100),
 	senha			VARCHAR(255),
-	tipo_usuario	BIT
+	tipo_usuario	INT
 );
 
 CREATE TABLE fornecedores (
@@ -45,3 +45,8 @@ CREATE TABLE alerta (
 	tipo_alerta		INT, -- 1: estoque baixo, 2: reabastecimento
 	data_criacao	DATETIME
 );
+
+ALTER TABLE usuarios
+ADD CONSTRAINT DF_tipo_usuario DEFAULT 1 FOR tipo_usuario;
+
+Select * From usuarios;

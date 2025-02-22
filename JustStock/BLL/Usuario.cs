@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JustStock.BLL
 {
-    internal class Usuario
+    public class Usuario
     {
         private int id_usuario;
         private string nome;
